@@ -29,7 +29,7 @@ mod_mod1_server <- function(input, output, session){
 
 
  df_dateFormat <- github_csv %>%
-     dplyr::mutate(github_csv, statusDateConverted = as.Date(statusDate, format = "%d.%m.%Y")) %>%
+     dplyr::mutate(statusDateConverted = as.Date(statusDate, format = "%d.%m.%Y")) %>%
      transform(orderNr = as.character(orderNr))
 
    # github_csv2 <- dplyr::mutate(github_csv, statusDateConverted = as.Date(statusDate, format = "%d.%m.%Y"))
