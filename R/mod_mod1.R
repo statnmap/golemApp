@@ -32,21 +32,18 @@ mod_mod1_server <- function(input, output, session){
      dplyr::mutate(github_csv, statusDateConverted = as.Date(statusDate, format = "%d.%m.%Y")) %>%
      transform(orderNr = as.character(orderNr))
 
-
    # github_csv2 <- dplyr::mutate(github_csv, statusDateConverted = as.Date(statusDate, format = "%d.%m.%Y"))
    # ddd <- transform(github_csv2, orderNr = as.character(orderNr))
    # df_dateFormat <- ddd
-  #
+
    dateFrom <- anytime::anydate("2020-11-18")
    dateTo <- anytime::anydate("2020-11-18")
-  #
+
    func_FilterDate <- function(df, from, to){
      df[df$statusDateConverted >= from & df$statusDateConverted <= to,]
    }
-  #
+
    data_app <- func_FilterDate(df_dateFormat, dateFrom, dateTo)
-  #
-  #
    colnames(data_app)[1] <- "transitNr"
   
   
@@ -55,11 +52,8 @@ mod_mod1_server <- function(input, output, session){
     leaflet::leaflet() #%>%
       # leaflet::addProviderTiles(providers$Stamen.TonerLite,
       #                  options = leaflet::providerTileOptions(noWrap = TRUE)
-      # )
-    
-  })
-
-    # mapa <-   leaflet::addPolygons(
+      # ) %>%
+      # leaflet::addPolygons(
     #     #data = districts,
     #     #group = "districts",
     #     #layerId = ~id,
@@ -74,21 +68,15 @@ mod_mod1_server <- function(input, output, session){
     #       opacity = 0.8,
     #       fillOpacity = 0.5,
     #       bringToFront = TRUE)
-    #   ) 
-  #})
-  
+    #   )     
+  })
 
   output$table <- reactable::renderReactable({
     reactable::reactable(
       data = data_app
     )
   })
-  
  
-  
-  
-  
-  
   
 }
     
