@@ -1,0 +1,11 @@
+name: TestGolem
+title: TestGolem
+username:
+account: kghwl
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4122562
+bundleId: 4593335
+url: https://kghwl.shinyapps.io/TestGolem/
+when: 1620896080.50238
+lastSyncTime: 1620896080.50238
